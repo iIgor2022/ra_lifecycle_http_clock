@@ -23,7 +23,7 @@ export default class Form extends React.Component {
   handleInputChange({ target }) {
     const { name, value } = target;
 
-    this.setState(prevForm => ({ ...prevForm, [name]: value}));
+    this.setState(prevForm => ({ ...prevForm, [name]: value }));
   }
 
   render() {
@@ -43,7 +43,9 @@ export default class Form extends React.Component {
             type="text"
             className='form-control__name'
             id='name'
-            value={this.handleInputChange}
+            name='name'
+            value={this.state.name}
+            onChange={this.handleInputChange}
             ref={this.nameRef}
             autoComplete='off'
             required
